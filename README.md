@@ -75,5 +75,6 @@ Feel free to fork this project and submit pull requests. Ideas for improvements:
 
 ---
 
-**Author:** [Arrnav Gupta/luthentic484]
+**Author:** Arrnav Gupta / @luthentic484
+
 **License:** Open Source
