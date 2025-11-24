@@ -66,10 +66,6 @@ This project serves as a practical example of Object-Oriented Programming (OOP) 
     *   Click the **Red Bin Icon** next to an entry to delete it.
     *   Click the **X** button at the top right of the history panel to return to the calculator.
 
-## 📸 Screenshots
-
-*(You can insert screenshots of your application here running in Light Mode and Dark Mode)*
-
 ## 🤝 Contributing
 
 Feel free to fork this project and submit pull requests. Ideas for improvements:
@@ -79,5 +75,5 @@ Feel free to fork this project and submit pull requests. Ideas for improvements:
 
 ---
 
-**Author:** [Your Name/Handle]
+**Author:** [Arrnav Gupta/luthentic484]
 **License:** Open Source
