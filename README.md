@@ -1,34 +1,83 @@
-# CSE2006 Project: GUI Calculator
+# 🧮 Java GUI Calculator
 
-## Introduction
-This project implements a simple Graphical User Interface (GUI) calculator using Java Swing. It allows users to perform basic arithmetic operations (addition, subtraction, multiplication, division) and maintains a history of calculations, demonstrating core Java concepts, object-oriented programming principles, exception handling, and file I/O.
+A robust, modern, and aesthetically pleasing calculator application built entirely using **Java Swing** and **AWT**. This project demonstrates advanced UI customization, file persistence, and state management within a desktop application.
 
-## Setup Instructions
-1.  **Ensure Java Development Kit (JDK) is installed**: This project requires Java 8 or newer.
-2.  **Save the file**: Save the provided `Main.java` source code into a directory of your choice.
+## 🌟 Features
 
-## How to Run
-1.  **Compile the Java code**: Open a terminal or command prompt, navigate to the directory where you saved `Main.java`, and compile it using the Java compiler:
+*   **Standard Arithmetic:** Performs addition, subtraction, multiplication, and division with precision.
+*   **Smart Logic:** Handles chained calculations (e.g., `5 + 5 * 2`) and allows changing operators on the fly.
+*   **Precision Formatting:** Automatically handles decimal places, showing integers when possible and rounding non-terminating decimals to 10 digits.
+*   **🌗 Dark & Light Mode:** A built-in theme toggle with custom-drawn Sun and Moon icons. The theme applies instantly to all UI components.
+*   **📜 Persistent History:**
+    *   Saves calculation history to a local `history.txt` file.
+    *   View history via a slide-over panel (using CardLayout).
+    *   Delete individual history entries using a custom "Bin" button.
+    *   Handles empty history states gracefully.
+*   **Custom UI Components:** Uses `Graphics2D` to draw rounded buttons, icons, and hover effects programmatically (no external image assets required).
+
+## 🛠️ Tech Stack
+
+*   **Language:** Java (JDK 8+)
+*   **GUI Framework:** Swing (`javax.swing`) & AWT (`java.awt`)
+*   **File I/O:** `java.io` & `java.nio` for history management.
+
+## 🚀 How to Run
+
+### Prerequisites
+Ensure you have the [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/downloads/) installed on your machine.
+
+### Steps
+1.  **Save the file:**
+    Save the provided code into a file named **`Main.java`**.
+
+2.  **Compile the code:**
+    Open your terminal or command prompt, navigate to the directory where you saved the file, and run:
     ```bash
     javac Main.java
     ```
-2.  **Run the application**: After successful compilation, run the application:
+
+3.  **Run the application:**
     ```bash
     java Main
     ```
-    A calculator window will appear, ready for use.
 
-## Course Objectives Met
-This project was designed to address the following objectives from the CSE2006 course syllabus:
+## 📂 Project Structure & Concepts
 
-1.  **Java Introduction & Flow Control (Variables, Operators, Loops, if/else)**:
-    *   **Demonstrated by**: Use of variables (`result`, `currentInput`, `lastOperator`), arithmetic operators (`+`, `-`, `*`, `/`), `if/else` and `switch` statements for managing calculator logic (e.g., determining operation, handling clear/delete, preventing multiple decimal points, division by zero check).
+This project serves as a practical example of Object-Oriented Programming (OOP) and GUI development:
 
-2.  **OOP (Classes, Objects, Inheritance, Polymorphism, Encapsulation)**:
-    *   **Demonstrated by**: The `Main` class extends `JFrame`, showcasing **inheritance**. `displayField` (JTextField), `JButton` instances, and `ActionEvent` are all **objects**. The `Main` class itself **encapsulates** all UI components and the calculator's operational logic. The `actionPerformed` method handles events polymorphically via the `ActionListener` interface.
+*   **Encapsulation:** All logic and UI components are encapsulated within the `Main` class.
+*   **Inner Classes:** Custom components like `RoundedButton`, `ThemeToggleButton`, `HistoryButton`, and `BinButton` are implemented as inner classes to override `paintComponent` for custom rendering.
+*   **Layout Managers:**
+    *   `BorderLayout`: Used for the main window structure.
+    *   `GridLayout`: Used for the calculator keypad.
+    *   `CardLayout`: Used to switch between the Calculator view and the History view.
+    *   `BoxLayout`: Used for the scrollable history list.
+*   **Event Handling:** Implements `ActionListener` to handle button clicks and logical flow control.
+*   **File Persistence:** Reads from and appends to a text file to keep history alive even after the app is closed.
 
-3.  **Exception Handling (try-catch) & Multithreading (Thread lifecycle or GUI Event Dispatching)**:
-    *   **Demonstrated by**: `try-catch` blocks are used to handle potential `NumberFormatException` when parsing user input from the `displayField` and `IOException` during file operations (reading/writing `history.txt`). **GUI Event Dispatching** is intrinsically demonstrated by the use of `SwingUtilities.invokeLater()` to ensure UI updates are handled safely on the Event Dispatch Thread (EDT), crucial for responsive GUI applications.
+## 🎮 Usage Guide
 
-4.  **I/O Streams (Reading/Writing data to files)**:
-    *   **Demonstrated by**: The `appendToHistory` method uses `FileWriter` and `PrintWriter` to write calculation results to `history.txt`, ensuring persistent storage. The "History" button reads from `history.txt` using `java.nio.file.Files.readAllLines` to display past calculations to the user, demonstrating file reading capabilities.
+1.  **Theming:** Click the **Sun/Moon icon** in the top-left corner to toggle between Light Mode and Dark Mode.
+2.  **Calculation:** Use the keypad or your keyboard (if mapped) to enter numbers.
+    *   The **Expression Label** (top right) shows the current operation being performed.
+    *   **+/-** toggles positive/negative numbers.
+3.  **History:**
+    *   Click the **Clock Icon** (blue button) to open the History view.
+    *   Click the **Red Bin Icon** next to an entry to delete it.
+    *   Click the **X** button at the top right of the history panel to return to the calculator.
+
+## 📸 Screenshots
+
+*(You can insert screenshots of your application here running in Light Mode and Dark Mode)*
+
+## 🤝 Contributing
+
+Feel free to fork this project and submit pull requests. Ideas for improvements:
+*   Add keyboard support (KeyListeners).
+*   Add scientific calculator functions (sin, cos, tan).
+*   Add a clear-all history button.
+
+---
+
+**Author:** [Your Name/Handle]
+**License:** Open Source
